@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <title>Hospital Management System</title>
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-lg-3">
+        <a class="navbar-brand" href="/">Hospital Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <a type="button" class="btn btn-outline-dark" href="/doctors">Doctors</a>
+            <a type="button" class="btn btn-outline-dark active" href="/patients">Patients</a>
+            <a type="button" class="btn btn-outline-dark" href="/medrec">Medical Records</a>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone no</th>
+                <th>Room no</th>
+                <th>Reg Id</th>
+                <th>Prescription Id</th>
+                <th>Bill Id</th>
+                <th>Medical Record No</th>
+                <th>Doctor Id</th>
+            </tr>
+            {% for sts in st %}
+            <tr>
+                <td>{{sts.patient_id}}</td>
+                <td>{{sts.p_name}}</td>
+                <td>{{sts.age}}</td>
+                <td>{{sts.gender}}</td>
+                <td>{{sts.phone_no}}</td>
+                <td>{{sts.room_id}}</td>
+                <td>{{sts.reg_id}}</td>
+                <td>{{sts.pres_id}}</td>
+                <td>{{sts.bill_id}}</td>
+                <td>{{sts.mr_no}}</td>
+                <td>{{sts.doc_id}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="container mt-3">
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <a type="button" class="btn btn-outline-dark" href="/insertpatients">Insert Values</a>
+            <a type="button" class="btn btn-outline-dark" href="/delete">Delete Values</a>
+        </div>
+        <form class="row g-3 m-3 has-validation" novalidate method="get" action="/insertpatientsform">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Patient Id</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="patientid" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Patient Name</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="patientname" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon2">Age</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="age" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon3">Gender</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="gender" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon4">Phone No</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="phoneno" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon5">Room Id</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="roomid" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon6">Registration Id</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="registrationid" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon6">Prescription Id</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="prescriptionid" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon6">Bill Id</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="billid" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon6">Medical Record No</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="medicalrecordno" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon6">Doctor Id</span>
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="doctorid" required>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-dark" type="submit">Commit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
